@@ -1,0 +1,46 @@
+package com.winter.app.regions;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.winter.app.util.DBConnector;
+
+public class RegionDAO {
+	
+	public List<RegionDTO> getList() throws Exception {
+	
+		//1. driver를 메모리에 로딩(객체 생성)
+		
+		Connection con =DBConnector.getConnector();
+		//3. Sql문 생성
+		String sql = "SELECT REGION_NAME, REGION_ID FROM REGIONS";
+			
+			//4. SQL문 미리 전송
+		PreparedStatement st = con.prepareStatement(sql);
+			
+			//5.
+			
+			//6. 최종 전송 및 결과 처리
+		ResultSet rs = st.executeQuery();
+		
+		List<RegionDTO> ar = new ArrayList<RegionDTO>();
+		
+		while (rs.next()) {
+				//rs = 1, Europe
+			RegionDTO regionDTO = new RegionDTO();
+			int n = rs.getInt("REGION_ID");
+			regionDTO.setRegion_id(n);
+			regionDTO.setRegion_name(rs.getString("REGION_NAME"));
+			
+			ar.add(regionDTO);
+		}
+
+		DBConnector.disConnect(rs, st, con);
+		return ar;
+	}
+
+}
