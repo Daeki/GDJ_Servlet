@@ -24,8 +24,15 @@ public class DBConnector {
 		
 	}
 	
+	//SELECT
 	public static void disConnect (ResultSet rs, PreparedStatement st, Connection con) throws Exception {
 		rs.close();
+		st.close();
+		con.close();
+	}
+	
+	//INSERT, UPDATE, DELETE
+	public static void disConnect(PreparedStatement st, Connection con)throws Exception{
 		st.close();
 		con.close();
 	}
