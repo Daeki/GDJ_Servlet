@@ -5,7 +5,7 @@
 <%
 	RegionDAO dao = new RegionDAO();
 	RegionDTO regionDTO = new RegionDTO();
-	String n= request.getParameter("region_id");
+	String n= request.getParameter("region_id3");
 	int num = Integer.parseInt(n);//NumberFormat
 	regionDTO.setRegion_id(num);
 	regionDTO = dao.getDetail(regionDTO);
