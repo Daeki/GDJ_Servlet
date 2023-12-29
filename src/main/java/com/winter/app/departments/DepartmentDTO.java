@@ -1,12 +1,16 @@
 package com.winter.app.departments;
 
+import java.util.List;
+
+import com.winter.app.employees.EmployeeDTO;
+
 public class DepartmentDTO {
 	
 	private int department_id;
 	private String department_name;
 	private int manager_id;
 	private int location_id;
-	
+	private List<EmployeeDTO> ar;
 	
 	public int getDepartment_id() {
 		return department_id;

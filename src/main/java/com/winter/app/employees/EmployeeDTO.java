@@ -2,7 +2,10 @@ package com.winter.app.employees;
 
 import java.sql.Date;
 
+import com.winter.app.departments.DepartmentDTO;
+
 public class EmployeeDTO {
+	
 	
 	private int employee_id;
 	private String first_name;

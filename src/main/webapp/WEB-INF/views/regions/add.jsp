@@ -9,7 +9,7 @@
 <body>
 	<h1>Regions Add</h1>
 	
-	<form action="./addProcess.jsp">
+	<form action="./addProcess.jsp" method="GET">
 		<div>
 			대륙ID<input type="text" name="region_id" value="0">
 		</div>
